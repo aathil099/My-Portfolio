@@ -1026,6 +1026,70 @@ main {
   font-weight: var(--fw-300);
 }
 
+/*-----------------------------------*\
+  #added
+\*-----------------------------------*/
+
+:root {
+  --ubuntu-gray: #202020;
+  --ubuntu-orange: #e95420;
+  --ubuntu-light: #f6f6f6;
+}
+
+/* Modal Overlay */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: var(--ubuntu-gray);
+  color: #ffffff;
+  margin: 10% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease-in-out;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  color: var(--ubuntu-orange);
+  border-bottom: 2px solid var(--ubuntu-orange);
+  padding-bottom: 8px;
+}
+
+.modal-content ul li {
+  margin-bottom: 8px;
+}
+
+/* Close Button */
+.close {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--ubuntu-orange);
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #a3a3a3;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 
 
 
