@@ -1,19 +1,3 @@
-/*-----------------------------------*\
-  #style.css
-\*-----------------------------------*/
-
-
-/**
- * copyright 2022 @codewithsadee
- */
-
-
-
-
-
-/*-----------------------------------*\
-  #CUSTOM PROPERTY
-\*-----------------------------------*/
 
 :root {
 
@@ -112,9 +96,6 @@
 }
 
 
-
-
-
 /*-----------------------------------*\
   #RESET
 \*-----------------------------------*/
@@ -159,8 +140,6 @@ body { background: var(--smoky-black); }
 
 
 
-
-
 /*-----------------------------------*\
   #REUSED STYLE
 \*-----------------------------------*/
@@ -171,7 +150,7 @@ article {
   border: 1px solid var(--jet);
   border-radius: 20px;
   padding: 15px;
-  box-shadow: var(--shadow-1);
+  box-shadow: -5px 5px 5px hsla(0, 0%, 0%, 0.25);
   z-index: 1;
 }
 
@@ -193,7 +172,7 @@ article {
   align-items: center;
   font-size: 16px;
   color: var(--orange-yellow-crayola);
-  box-shadow: var(--shadow-1);
+  box-shadow: -1.5px 1.5px 1.5px hsla(0, 0%, 1%, 0.15);
   z-index: 1;
 }
 
@@ -278,7 +257,7 @@ article.active {
   padding: 15px;
   padding-top: 45px;
   border-radius: 14px;
-  box-shadow: var(--shadow-2);
+  box-shadow: var(--shadow-1);
   cursor: pointer;
   z-index: 1;
 }
@@ -293,9 +272,6 @@ article.active {
 }
 
 
-
-
-
 /*-----------------------------------*\
   #MAIN
 \*-----------------------------------*/
@@ -305,9 +281,6 @@ main {
   margin-bottom: 75px;
   min-width: 259px;
 }
-
-
-
 
 
 /*-----------------------------------*\
@@ -338,7 +311,7 @@ main {
 
 .info-content .name {
   color: var(--white-2);
-  font-size: var(--fs-3);
+  font-size: var(--fs-2);
   font-weight: var(--fw-500);
   letter-spacing: -0.25px;
   margin-bottom: 10px;
@@ -363,7 +336,8 @@ main {
   color: var(--orange-yellow-crayola);
   background: var(--border-gradient-onyx);
   padding: 10px;
-  box-shadow: var(--shadow-2);
+  box-shadow: -1.5px 1.5px 1.5px hsla(0, 0%, 0%, 0.25);
+  
   transition: var(--transition-1);
   z-index: 1;
 }
@@ -443,11 +417,7 @@ main {
   font-size: 18px;
 }
 
-
 .social-item .social-link:hover { color: var(--light-gray); }
-
-
-
 
 
 /*-----------------------------------*\
@@ -463,7 +433,7 @@ main {
   backdrop-filter: blur(10px);
   border: 1px solid var(--jet);
   border-radius: 12px 12px 0 0;
-  box-shadow: var(--shadow-2);
+  box-shadow: 2px -5px 12px hsla(0, 0%, 15%, 0.25);
   z-index: 5;
 }
 
@@ -487,10 +457,6 @@ main {
 
 .navbar-link.active { color: var(--orange-yellow-crayola); }
 
-
-
-
-
 /*-----------------------------------*\
   #ABOUT
 \*-----------------------------------*/
@@ -505,7 +471,6 @@ main {
 }
 
 .about-text p { margin-bottom: 15px; }
-
 
 
 /**
@@ -527,7 +492,7 @@ main {
   background: var(--border-gradient-onyx);
   padding: 20px;
   border-radius: 14px;
-  box-shadow: var(--shadow-2);
+  box-shadow: -4px 4px 8px hsla(0, 0%, 0%, 0.25);
   z-index: 1;
 }
 
@@ -1031,7 +996,7 @@ main {
 \*-----------------------------------*/
 
 :root {
-  --ubuntu-gray: #202020;
+  --ubuntu-gray: #242424;
   --ubuntu-orange: #e95420;
   --ubuntu-light: #f6f6f6;
 }
@@ -1068,6 +1033,13 @@ main {
   padding-bottom: 8px;
 }
 
+.modal-content p {
+  margin-top: 10px;
+  color: #ffffff;
+  padding-bottom: 8px;
+  font-size: 16px;
+}
+
 .modal-content ul li {
   margin-bottom: 8px;
 }
@@ -1082,7 +1054,7 @@ main {
 }
 
 .close:hover {
-  color: #a3a3a3;
+  color: #fff;
 }
 
 @keyframes fadeIn {
@@ -1090,96 +1062,18 @@ main {
   to { opacity: 1; transform: scale(1); }
 }
 
-
-
-
-
-/*-----------------------------------*\
-  #BLOG
-\*-----------------------------------*/
-
-.blog-posts { margin-bottom: 10px; }
-
-.blog-posts-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
+.modal-points {
+  color: #ffffff;            /* white list items */
+  font-size: 16px;
+  font-family: "Ubuntu", sans-serif;
+  margin-top: 10px;
+  padding-left: 20px;
 }
-
-.blog-post-item > a {
-  position: relative;
-  background: var(--border-gradient-onyx);
-  height: 100%;
-  box-shadow: var(--shadow-4);
-  border-radius: 16px;
-  z-index: 1;
+.modal-points li {
+  margin-bottom: 8px;
+  list-style-type: disc;    /* bullet points */
+  list-style-position: inside; /* inside the box */
 }
-
-.blog-post-item > a::before {
-  content: "";
-  position: absolute;
-  inset: 1px;
-  border-radius: inherit;
-  background: var(--eerie-black-1);
-  z-index: -1;
-}
-
-.blog-banner-box {
-  width: 100%;
-  height: 200px;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.blog-banner-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: var(--transition-1);
-}
-
-.blog-post-item > a:hover .blog-banner-box img { transform: scale(1.1); }
-
-.blog-content { padding: 15px; }
-
-.blog-meta {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 7px;
-  margin-bottom: 10px;
-}
-
-.blog-meta :is(.blog-category, time) {
-  color: var(--light-gray-70);
-  font-size: var(--fs-6);
-  font-weight: var(--fw-300);
-}
-
-.blog-meta .dot {
-  background: var(--light-gray-70);
-  width: 4px;
-  height: 4px;
-  border-radius: 4px;
-}
-
-.blog-item-title {
-  margin-bottom: 10px;
-  line-height: 1.3;
-  transition: var(--transition-1);
-}
-
-.blog-post-item > a:hover .blog-item-title { color: var(--orange-yellow-crayola); }
-
-.blog-text {
-  color: var(--light-gray);
-  font-size: var(--fs-6);
-  font-weight: var(--fw-300);
-  line-height: 1.6;
-}
-
-
-
 
 
 /*-----------------------------------*\
@@ -1287,8 +1181,6 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
 
-
-
 /*-----------------------------------*\
   #RESPONSIVE
 \*-----------------------------------*/
@@ -1356,6 +1248,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     width: 520px;
     margin-inline: auto;
     padding: 30px;
+  
   }
 
   .article-title {
@@ -1739,7 +1632,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .sidebar, article {
     width: 950px;
-    box-shadow: var(--shadow-5);
+    box-shadow: var(--shadow-2);
   }
 
 
@@ -1819,9 +1712,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   .blog-banner-box { height: 230px; }
 
 }
-
-
-
 
 
 /**
