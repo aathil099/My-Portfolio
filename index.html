@@ -207,14 +207,14 @@
         </header>
 
         <section class="about-text">
-          <p>
-            I am a passionate Electrical and Electronics Engineer with a strong interest in Electronics, Analog and digital design, Embedded Systems, FPGA, VLSI, ASIC design, Iot, PCB layout and schematic design, hardware and software engineering, machine learning, and low-power systems. 
+          <p style="text-align: justify;">
+            I am a passionate Electrical and Electronics Engineer with a strong interest in Electronics, analog and digital design, Embedded Systems, FPGA, VLSI, ASIC design, Iot, PCB layout and schematic design, hardware and software engineering, machine learning, and low-power systems. 
             My expertise spans a wide range of technologies, including C++/C, VHDL, Verilog, System Verilog, RTOS, Java, Python, and 
             tools like Altium Designer, ESP IDF, MATLAB, NI Multisim, Proteus, OpenRoad, Synopsys EDA, IIC Compiler, Klayout, Xschem, LTSpice, Xilinx Vivado, ModelSim, AUTOCAD, Sketch Up, PSIM, Quartus II, MPLAB, Code Composer .
   
           </p>
 
-          <p>
+          <p style="text-align: justify;">
             I am a quick learner and a team player, always eager to take on new challenges and expand my knowledge. 
             I am dedicated to delivering high-quality work and contributing to the success of any project I am involved in.
           </p>
@@ -727,7 +727,7 @@
 
                 <h3 class="project-title">Orizon</h3>
 
-                <p class="project-category">Web development</p>
+                <p class="project-category">PCB Design</p>
 
               </a>
             </li>
@@ -745,7 +745,7 @@
 
                 <h3 class="project-title">Fundo</h3>
 
-                <p class="project-category">Web design</p>
+                <p class="project-category">ASIC/FPGA Design</p>
 
               </a>
             </li>
@@ -857,27 +857,67 @@
 
               </a>
             </li>
-
-          </ul>
-
+          </ul> 
           <!-- Modal for Energy Monitoring System -->
           <div id="emsModal" class="modal">
             <div class="modal-content">
               <span class="close">&times;</span>
               <h2>Energy Monitoring System</h2>
-              <img src="./assets/images/aathil/EMS-Home.jpg" alt="EMS" style="max-width: 100%; border-radius: 10px;">
-                <p class="modal-description">
-                  The Energy Monitoring System tracks real-time power usage in residential or industrial settings. 
-                  It displays voltage, current, and power consumption with detailed analytics, helping users reduce energy costs.
-                </p>
-                <ul class="modal-points">
-                  <li>Microcontroller-based design</li>
-                  <li>Live data via serial or IoT dashboard</li>
-                  <li>Overload protection and logging</li>
-                </ul>
-            </div>
-          </div>
+                <div style= "width: 560px; height: 300px; overflow: hidden; border-radius: 10px;">
+                  <img src="./assets/images/aathil/EMS1.jpg" alt="EMS" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>  
+                  <p class="modal-description" style="text-align: justify;">
+                    Designed and implemented a customized IoT-based Energy Monitoring System tailored for the garment industry, utilizing the ESP32-WROOM-32UE microcontroller and CT sensors to ensure accurate, real-time measurement of voltage, current, power factor, and energy consumption.
+                  </p>
+                  <p class="modal-description" style="text-align: justify;">  
+                    The system features a robust circuit designed in <em>Altium Designer</em> and integrates seamlessly with <strong>ThingSpeak</strong> for secure cloud data storage and a SD module is also integrated to prevent data loss. A dedicated web interface displays real-time analytics and visualizations, enabling users to monitor energy usage remotely. Additionally, machine learning algorithms were employed to predict consumption patterns and provide actionable insights, supporting energy optimization and cost reduction efforts.
+                  </p>
 
+              <h3>System Overview</h3>
+              <img src="./assets/images/aathil/system.jpg" alt="EMS" style="display: block; margin: 0 auto; max-width: 100%; border-radius: 10px;">
+                <p class="modal-description" style="text-align: justify;">
+                  The system is composed of energy monitoring nodes that measure voltage, current, active power, and cumulative energy consumption using the V9881D energy measurement chip. A low-cost energy meter was designed using a non-intrusive current transformer (CT) and an ESP32-WROOM microcontroller, which includes a built-in wireless communication module. An LCD is integrated to display real-time measurements, and an SD card module is implemented to store data locally during Wi-Fi outages, ensuring no data is lost. The microcontroller is powered by a DC power supply equipped with a voltage regulator circuit.  
+                </p> 
+                <p class="modal-description" style="text-align: justify;">
+                  The system is designed to be user-friendly, with a web interface that allows users to monitor energy consumption in real-time. The data is stored in the cloud using ThingSpeak, enabling remote access and analysis. The system also includes machine learning algorithms that predict energy consumption patterns, providing users with insights into their energy usage and helping them optimize their consumption.
+                </p>
+                
+                <img src="./assets/images/aathil/EMS2.jpg" alt="EMS" style="display: block; margin: 0 auto; max-width: 100%; border-radius: 10px;">
+                
+                <p class="modal-description" style="text-align: justify;">
+                  In my project, I developed a program using the ESP-IDF development framework, structured in the following manner.
+                </p>
+                
+                <ul class="modal-points" >
+                  <li>Start: Marks the beginning of the program, where necessary header files and dependencies are included.</li>
+                  <li>Initialization: This stage sets up all essential hardware components, including the Wi-Fi module, SD card module, and sensors required for data acquisition. The LCD displays a welcome message, indicating that the system has started successfully.</li>
+                  <li>Main Loop Start: The core of the program begins here. As is standard in embedded systems, the program enters an infinite loop that continuously monitors and processes data. In this phase, UART transmission and LCD display functionalities are activated, and sensor readings are initiated.</li>
+                  <li>Data Collection: The system actively gathers data from the configured sensors and input devices during each loop iteration.</li>
+                  <li>Wi-Fi Connectivity Check: The program checks whether the device is currently connected to a Wi-Fi network.</li>
+                  <li>Data Handling: If a Wi-Fi connection is available, the system uploads the collected data to the cloud in real time. If Wi-Fi is not available, the data is stored locally on the SD card to ensure no data loss.</li>
+                  <li>End of Main Loop: This indicates the end of the current iteration. The program then loops back to the Main Loop Start, maintaining continuous operation.</li>
+                  <li>Loop Continuation: This step is inherently managed by the infinite loop structure, allowing the system to function without interruption.</li>
+                  <li>Stop: Represents the theoretical endpoint of the program. However, in practical embedded system deployments, the program continues to run indefinitely until the device is manually powered down.</li>
+                </ul>
+
+                <p class="modal-description" style="text-align: justify;">
+                  ThingSpeak was integrated into the energy monitoring system due to its user-friendly interface and flexibility. A dedicated channel was created with fields for current, voltage, power, energy, power factor, and frequency. The ESP32-WROOM microcontroller formatted and transmitted data using the ThingSpeak API, ensuring accurate and synchronized updates every 5 seconds. 
+                  The platform enabled secure data transmission, real-time monitoring, and remote access. Its graphical visualization tools made the measured parameters easy to interpret. Team members accessed raw data via the read API key for analysis and decision-making.
+                  Below are screenshots of the ThingSpeak dashboard displaying real-time energy data.
+                </p>
+                <img src="./assets/images/aathil/cloud1.jpg" alt="EMS" style="display: block; margin: 0 auto; max-width: 100%; border-radius: 10px;">
+                <img src="./assets/images/aathil/cloud2.jpg" alt="EMS" style="display: block; margin: 0 auto; max-width: 100%; border-radius: 10px;">
+                <img src="./assets/images/aathil/cloud3.jpg" alt="EMS" style="display: block; margin: 0 auto; max-width: 100%; border-radius: 10px;">
+                
+                <p class="modal-description" style="text-align: justify;">
+                  This project successfully developed an IoT-based energy monitoring system specifically designed for the garment industry. By combining reliable hardware and software components, the system provides real-time tracking of essential energy parameters such as voltage, current, power factor, and overall energy consumption. The ESP32-WROOM-32UE microcontroller and CT sensors were selected for their high compatibility and accuracy, ensuring dependable performance in industrial settings. 
+                  Circuit design was carried out using EasyEDA, followed by hardware assembly on a perf copper board. A draft PCB layout was also created to support future production needs.
+                </p>
+                <p class="modal-description" style="text-align: justify;">  
+                  Integration with the ThingSpeak cloud platform enabled secure data transmission, remote access, and real-time visualization, adding scalability to the solution. Through regular data updates and a user-friendly interface, manufacturers can monitor energy usage trends, identify inefficiencies, and make informed decisions to optimize consumption and reduce costs. The system underwent extensive testing, confirming its ability to accurately measure and display energy metrics, thus demonstrating its potential to significantly improve energy management in the garment sector.
+                </p>
+              </div>
+          </div>
         </section>
 
       </article>

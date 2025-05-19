@@ -1029,8 +1029,36 @@ main {
 .modal-content h2 {
   margin-top: 0;
   color: var(--ubuntu-orange);
+  /*border-bottom: 2px solid var(--ubuntu-orange);*/
+  padding-bottom: 8px;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  color: var(--ubuntu-orange);
   border-bottom: 2px solid var(--ubuntu-orange);
   padding-bottom: 8px;
+  margin-bottom: 16px; /* Added space after the border-bottom */
+}
+
+.modal-points {
+  list-style-position:outside; /* Keep bullets outside */
+  padding-left: 1.5em; /* Indent bullets */
+}
+
+.modal-points li {
+  text-align: left;
+  margin-bottom: 12px;       /* Space between list items */
+  line-height: 1.6;          /* Good line spacing */
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+
+  padding-left: 1.5em;
+  text-indent: -1.5em;
+}
+.modal-points li::marker {
+  color: var(--ubuntu-orange); /* Custom bullet color */
+  font-size: 16px; /* Adjust bullet size */
 }
 
 .modal-content p {
