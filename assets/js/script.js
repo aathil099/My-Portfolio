@@ -160,31 +160,40 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  const modal = document.getElementById('emsModal');
-  const closeBtn = modal.querySelector('.close');
+  const modals = {
+    'Energy Monitoring System': document.getElementById('emsModal'),
+    'EMS Breakout Board': document.getElementById('emsBreakoutBoardModal')
+  };
 
-  // Open modal on EMS project click
+  // Attach open modal events
   document.querySelectorAll('.project-item').forEach(item => {
     const title = item.querySelector('.project-title');
-    if (title && title.textContent.trim() === 'Energy Monitoring System') {
-      item.addEventListener('click', function (e) {
-        e.preventDefault(); // prevent default link behavior
-        modal.style.display = 'block';
-      });
-    }
-  });
+    if (title) {
+      const modal = modals[title.textContent.trim()];
+      if (modal) {
+        item.addEventListener('click', function (e) {
+          e.preventDefault();
+          modal.style.display = 'block';
+        });
 
-  // Close modal on 'X'
-  closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-  });
+        // Close modal on 'X'
+        const closeBtn = modal.querySelector('.close');
+        if (closeBtn) {
+          closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+          });
+        }
 
-  // Close modal on outside click
-  window.addEventListener('click', function (e) {
-    if (e.target === modal) {
-      modal.style.display = 'none';
+        // Close modal on outside click
+        window.addEventListener('click', function (e) {
+          if (e.target === modal) {
+            modal.style.display = 'none';
+          }
+        });
+      }
     }
   });
 });
+
 
 
