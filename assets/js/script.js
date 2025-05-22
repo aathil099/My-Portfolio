@@ -1,11 +1,7 @@
 'use strict';
 
-
-
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
-
-
 
 // sidebar variables
 const sidebar = document.querySelector("[data-sidebar]");
@@ -13,7 +9,6 @@ const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
 // sidebar toggle functionality for mobile
 sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
-
 
 
 // testimonials variables
@@ -54,7 +49,6 @@ modalCloseBtn.addEventListener("click", testimonialsModalFunc);
 overlay.addEventListener("click", testimonialsModalFunc);
 
 
-
 // custom select variables
 const select = document.querySelector("[data-select]");
 const selectItems = document.querySelectorAll("[data-select-item]");
@@ -81,18 +75,15 @@ const filterItems = document.querySelectorAll("[data-filter-item]");
 const filterFunc = function (selectedValue) {
 
   for (let i = 0; i < filterItems.length; i++) {
-
-    if (selectedValue === "all") {
-      filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
+    const itemCategory = filterItems[i].dataset.category.toLowerCase();
+    if (selectedValue === "all" || selectedValue === itemCategory) {
       filterItems[i].classList.add("active");
     } else {
       filterItems[i].classList.remove("active");
     }
-
   }
+};
 
-}
 
 // add event in all filter button items for large screen
 let lastClickedBtn = filterBtn[0];
@@ -101,7 +92,7 @@ for (let i = 0; i < filterBtn.length; i++) {
 
   filterBtn[i].addEventListener("click", function () {
 
-    let selectedValue = this.innerText.toLowerCase();
+    const selectedValue = this.innerText.toLowerCase();
     selectValue.innerText = this.innerText;
     filterFunc(selectedValue);
 
@@ -112,8 +103,6 @@ for (let i = 0; i < filterBtn.length; i++) {
   });
 
 }
-
-
 
 // contact form variables
 const form = document.querySelector("[data-form]");
@@ -134,8 +123,6 @@ for (let i = 0; i < formInputs.length; i++) {
   });
 }
 
-
-
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
@@ -148,7 +135,17 @@ for (let i = 0; i < navigationLinks.length; i++) {
       if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
         pages[i].classList.add("active");
         navigationLinks[i].classList.add("active");
+
         window.scrollTo(0, 0);
+        
+        if (pages[i].dataset.page === "portfolio") {
+          selectValue.innerText = "All";
+          filterFunc("all");
+
+          if (lastClickedBtn) lastClickedBtn.classList.remove("active");
+            filterBtn[0].classList.add("active");
+            lastClickedBtn = filterBtn[0];
+        }  
       } else {
         pages[i].classList.remove("active");
         navigationLinks[i].classList.remove("active");
@@ -193,6 +190,64 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const serviceLinks = {
+    "go-to-embedded": "embedded systems",
+    "go-to-firmware": "firmware development",
+    "go-to-pcb": "pcb designs",
+    "go-to-fpga": "asic/fpga design",
+    "go-to-ai": "ai/ml",
+    "go-to-electrical": "electrical design",
+    "go-to-power": "power systems",
+    "go-to-photography": "photography"
+  };
+
+  for (const id in serviceLinks) {
+    const link = document.getElementById(id);
+    if (link) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        // Show portfolio page
+        for (let i = 0; i < pages.length; i++) {
+          if (pages[i].dataset.page === "portfolio") {
+            pages[i].classList.add("active");
+          } else {
+            pages[i].classList.remove("active");
+          }
+        }
+
+        // Update navigation
+        for (let i = 0; i < navigationLinks.length; i++) {
+          if (navigationLinks[i].innerText.toLowerCase() === "portfolio") {
+            navigationLinks[i].classList.add("active");
+          } else {
+            navigationLinks[i].classList.remove("active");
+          }
+        }
+
+        // Set selected value
+        const selectedCategory = serviceLinks[id];
+        selectValue.innerText = selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1);
+        filterFunc(selectedCategory);
+
+        // Highlight correct button
+        lastClickedBtn.classList.remove("active");
+        for (let i = 0; i < filterBtn.length; i++) {
+          if (filterBtn[i].innerText.toLowerCase() === selectedCategory) {
+            filterBtn[i].classList.add("active");
+            lastClickedBtn = filterBtn[i];
+            break;
+          }
+        }
+
+        window.scrollTo(0, 0);
+      });
+    }
+  }
 });
 
 
