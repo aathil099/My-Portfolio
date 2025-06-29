@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "go-to-firmware": "firmware development",
     "go-to-pcb": "pcb designs",
     "go-to-fpga": "asic/fpga design",
-    "go-to-ai": "ai/ml",
+    "go-to-analog": "analog design",
     "go-to-electrical": "electrical design",
     "go-to-power": "power systems",
     "go-to-photography": "photography"
