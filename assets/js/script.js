@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
     'vehicle indicator circuit': document.getElementById('vehicleIndicatorModal'),
     'Carpark management system': document.getElementById('carparkManagementModal'),
     'Battery Health Monitoring System': document.getElementById('bhmsModal'),
-    'CMOS Filter Design': document.getElementById('cmosFilterModal')
+    'CMOS Inverter Design': document.getElementById('cmosFilterModal')
   };
 
   // Attach open modal events
