@@ -159,7 +159,15 @@ for (let i = 0; i < navigationLinks.length; i++) {
 document.addEventListener('DOMContentLoaded', function () {
   const modals = {
     'Energy Monitoring System': document.getElementById('emsModal'),
-    'EMS Breakout Board': document.getElementById('emsBreakoutBoardModal')
+    'EMS Breakout Board': document.getElementById('emsBreakoutBoardModal'),
+    'Matrix Vector Multiplier UART System': document.getElementById('mvmUartModal'),
+    'Digital Safe': document.getElementById('digitalSafeModal'),
+    'Plant Monitoring System': document.getElementById('plantMonitoringModal'),
+    'Custom ESP board': document.getElementById('customEspBoardModal'),
+    'vehicle indicator circuit': document.getElementById('vehicleIndicatorModal'),
+    'Carpark management system': document.getElementById('carparkManagementModal'),
+    'Battery Health Monitoring System': document.getElementById('bhmsModal'),
+    'CMOS Filter Design': document.getElementById('cmosFilterModal')
   };
 
   // Attach open modal events
