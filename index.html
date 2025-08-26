@@ -731,7 +731,7 @@
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
+                  <img src="./assets/images/aathil/mvm/LAYOUT CROPE.JPG" alt="fundo" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">Matrix Vector Multiplier UART System</h3>
@@ -992,23 +992,85 @@
                   </p>
             </div>
           </div>
+          
 
           <div id="mvmUartModal" class="modal">
             <div class="modal-content">
               <span class="close">&times;</span>
               <h2>Matrix Vector Multiplier UART System</h2>
-                <div style= "width: 560px; height: 300px; overflow: hidden; border-radius: 10px;">
-                  <img src="./assets/images/aathil/EMS-Breakout.jpg" alt="EMS" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                  <p class="modal-description" style="text-align: justify;">
-                    mvm
-                  </p>
-                  <p class="modal-description" style="text-align: justify;">  
-                    The system features a robust circuit designed in <em>Altium Designer</em> and integrates seamlessly with <strong>ThingSpeak</strong> for secure cloud data storage and a SD module is also integrated to prevent data loss. A dedicated web interface displays real-time analytics and visualizations, enabling users to monitor energy usage remotely. Additionally, machine learning algorithms were employed to predict consumption patterns and provide actionable insights, supporting energy optimization and cost reduction efforts.
-                  </p>
-          
 
-            </div>
+              <!-- Overview Image -->
+              <div style="width: 560px; height: 300px; overflow: hidden; border-radius: 10px;">
+                <img src="./assets/images/aathil/mvm/DISP.JPG" alt="ASIC Flow" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+
+              <p class="modal-description" style="text-align: justify;">
+                This project demonstrates the complete <strong>ASIC design flow</strong> for a Matrix Vector Multiplier UART system 
+                using <em>Synopsys EDA tools</em>. The RTL code was synthesized with the SAED 32nm library in 
+                <strong>Design Compiler</strong>, and the final <em>Place & Route (PnR)</em> was carried out in 
+                <strong>ICC2</strong>. The work emphasizes key steps such as synthesis, timing analysis, and physical layout generation.
+              </p>
+
+              <h3>RTL Synthesis and Visualization</h3>
+              <medium><em>Design Compiler • RTL Schematic • Synthesis Reports</em></medium>
+
+              <!-- RTL schematic image -->
+              <div style="width: 560px; height: 215px; overflow: hidden; border-radius: 10px; background: black;">
+                <img src="./assets/images/aathil/mvm/2.jpg" alt="RTL Schematic" style="width: 100%; height: 100%; object-fit: contain;">
+              </div>
+
+              <p class="modal-description" style="text-align: justify;">
+                The RTL was successfully synthesized and visualized in <strong>Design Vision</strong>. 
+                Reports generated include <em>ports, area, power, and timing</em>. For instance, 
+                the total design area was approximately <strong>102,264 µm²</strong> with a dynamic power of 
+                <strong>1.56 mW</strong>. The clock period was tuned to <em>10.5 ns</em> to ensure timing closure.
+              </p>
+
+              <!-- Synthesis Reports -->
+              <h3>Synthesis Metrics</h3>
+              <ul>
+                <li><strong>Ports:</strong> 4 I/O ports developed and verified</li>
+                <li><strong>Area:</strong> 102,263.87 µm²</li>
+                <li><strong>Power:</strong> 1.5619 mW (dynamic)</li>
+                <li><strong>Cells:</strong> ~73,806 cells used</li>
+                <li><strong>Timing:</strong> All wire delays met required constraints</li>
+              </ul>
+
+              <h3>Place and Route (PnR)</h3>
+              <medium><em>Node placement • Clock routing • Trace inspection</em></medium>
+
+              <!-- PnR Layout Image -->
+              <div style="width: 560px; height: 215px; overflow: hidden; border-radius: 10px; background: black;">
+                <img src="./assets/images/aathil/mvm/DW.jpg" alt="PnR Layout" style="width: 100%; height: 100%; object-fit: contain;">
+              </div>
+
+              <p class="modal-description" style="text-align: justify;">
+                The physical design was completed in <strong>ICC2</strong>. 
+                Node placement and routing were optimized for both {2,2,2,2} and {8,8,8,8} configurations. 
+                The clock network was created using the command 
+                <code>create_clock -period 10.5 clk</code>, ensuring synchronization across the layout. 
+                Final routing inspections confirmed no violations or critical errors.
+              </p>
+
+              <!-- Clock routing visualization -->
+              <div style="width: 560px; height: 215px; overflow: hidden; border-radius: 10px; background: black;">
+                <img src="./assets/images/aathil/mvm/4.jpg" alt="Clock Trace" style="width: 100%; height: 100%; object-fit: contain;">
+              </div>
+
+              <h3>Final Layout & Validation</h3>
+              <medium><em>Compact floorplan • Verified routing • Error-free design</em></medium>
+
+              <!-- Final Layout Image -->
+              <div style="width: 560px; height: 215px; overflow: hidden; border-radius: 10px; background: black;">
+                <img src="./assets/images/aathil/mvm/6.jpg" alt="Final Layout" style="width: 100%; height: 100%; object-fit: contain;">
+              </div>
+
+              <p class="modal-description" style="text-align: justify;">
+                The final chip layout was successfully generated with all error checks passed. 
+                This validates the <strong>ASIC flow execution</strong> from RTL synthesis to PnR, 
+                showcasing practical knowledge of Synopsys toolchains for digital VLSI design.
+              </p>
+            </div>       
           </div>
 
           <div id="digitalSafeModal" class="modal">
