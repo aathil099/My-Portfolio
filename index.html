@@ -75,7 +75,7 @@
             <div class="contact-info">
               <p class="contact-title">Email</p>
 
-              <a href="mailto:aathilahmeth@gmail.com" class="contact-link">aathilahmeth@gmail.com</a>
+              <a href="mailto:aathilahmeth@gmail.com" class="contact-link">ahmethaathil@gmail.com</a>
             </div>
 
           </li>
@@ -89,7 +89,7 @@
             <div class="contact-info">
               <p class="contact-title">Phone</p>
 
-              <a href="tel:+94 776383576" class="contact-link">+94 776383576</a>
+              <a href="tel:+94 776383576" class="contact-link">+971 556399877</a>
             </div>
 
           </li>
@@ -117,7 +117,7 @@
             <div class="contact-info">
               <p class="contact-title">Location</p>
 
-              <address>Colombo, Sri Lanka</address>
+              <address>Dubai, UAE</address>
             </div>
 
           </li>
@@ -695,7 +695,7 @@
                 <ion-icon name="eye-outline"></ion-icon>
                 </div>
 
-                <img src="./assets/images/aathil/EMS-Home.jpg" alt="Energy Monitoring System" loading="lazy">
+                <img src="./assets/images/aathil/home-di.JPG" alt="Energy Monitoring System" loading="lazy">
               </figure>
 
               <h3 class="project-title">Energy Monitoring System</h3>
@@ -749,10 +749,10 @@
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
+                  <img src="./assets/images/aathil/stopwatch/k-lay.PNG" alt="brawlhalla" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Digital Safe</h3>
+                <h3 class="project-title">Digital Stop Watch</h3>
 
                 <p class="project-category">ASIC/FPGA Design</p>
 
@@ -767,7 +767,7 @@
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
+                  <img src="./assets/images/aathil/plant monitor/DIS.png" alt="dsm." loading="lazy">
                 </figure>
 
                 <h3 class="project-title">Plant Monitoring System</h3>
@@ -1076,34 +1076,183 @@
           <div id="digitalSafeModal" class="modal">
             <div class="modal-content">
               <span class="close">&times;</span>
-              <h2>Digital Safe</h2>
-                <div style= "width: 560px; height: 300px; overflow: hidden; border-radius: 10px;">
-                  <img src="./assets/images/aathil/EMS-Breakout.jpg" alt="EMS" style="width: 100%; height: 100%; object-fit: cover;">
+              <h2>Digital Stop Watch</h2>
+              <!-- Overview Image -->
+                <div style="width: 560px; height: 300px; overflow: hidden; border-radius: 10px;">
+                  <img src="./assets/images/aathil/stopwatch/5.jpg" alt="Digital Safe" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
-                  <p class="modal-description" style="text-align: justify;">
-                    mvm
-                  </p>
-                  <p class="modal-description" style="text-align: justify;">  
-                    The system features a robust circuit designed in <em>Altium Designer</em> and integrates seamlessly with <strong>ThingSpeak</strong> for secure cloud data storage and a SD module is also integrated to prevent data loss. A dedicated web interface displays real-time analytics and visualizations, enabling users to monitor energy usage remotely. Additionally, machine learning algorithms were employed to predict consumption patterns and provide actionable insights, supporting energy optimization and cost reduction efforts.
-                  </p>
-          
 
-            </div>
-          </div>
+                <p class="modal-description" style="text-align: justify;">
+                  Designed and implemented a <strong>digital stopwatch system</strong> using open-source ASIC tools and 
+                  the <em>IHP SG13G2 PDK</em>. The project demonstrates the complete digital design flow 
+                  – from RTL coding and verification to synthesis, place & route, and final GDSII export.  
+                  The design also explores practical <strong>state machine modeling</strong> for sequential logic.
+                </p>
+
+                <h3>System Architecture</h3>
+                <medium><em>Finite State Machine • Sequential Logic • Behavioural Verilog</em></medium>
+
+                <!-- FSM diagram -->
+                <div style="width: 560px; height: 215px; overflow: hidden; border-radius: 10px; background: black;">
+                  <img src="./assets/images/aathil/stopwatch/digrm.png" alt="State Machine" style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+
+                <p class="modal-description" style="text-align: justify;">
+                  The stopwatch was modeled as a <strong>finite state machine</strong> (FSM).  
+                  Two combinational blocks drive the design: <em>next-state logic</em> and an <em>output decoder</em>.  
+                  This structure ensures predictable transitions between <strong>start, stop, increment, and reset states</strong>.
+                </p>
+
+                <h3>Functional Blocks</h3>
+                <medium><em>Decimal Counter • Seven Segment Controller</em></medium>
+
+                <!-- Decimal Counter -->
+                <div style="width: 560px; height: 215px; overflow: hidden; border-radius: 10px; background: black;">
+                  <img src="./assets/images/aathil/stopwatch/count.png" alt="Decimal Counter" style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+                <p class="modal-description" style="text-align: justify;">
+                  A four-digit <strong>decimal counter</strong> was designed using cascaded 4-bit binary counters.  
+                  Terminal count signals (TC) reset each counter and drive carry logic for higher digits, enabling precise millisecond counting.
+                </p>
+
+                <!-- Seven Segment Controller -->
+                <div style="width: 560px; height: 215px; overflow: hidden; border-radius: 10px; background: black;">
+                  <img src="./assets/images/aathil/stopwatch/7seg.png" alt="Seven Segment Controller" style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+                <p class="modal-description" style="text-align: justify;">
+                  A <strong>seven-segment display controller</strong> decodes counter outputs and drives the display.  
+                  The controller was built with combinational logic and tested for readability under multiple states.
+                </p>
+
+                <h3>Design Requirements</h3>
+                <ul>
+                  <li><strong>Time Range:</strong> 0.000 – 9.999 seconds (1 ms resolution)</li>
+                  <li><strong>Controls:</strong> Start • Stop • Increment • Reset</li>
+                  <li><strong>Output:</strong> Four-digit 7-segment display</li>
+                  <li><strong>Verification:</strong> Waveform validation via EDA Playground & Makerchip</li>
+                </ul>
+
+                <h3>ASIC Flow (OSIC + OpenROAD)</h3>
+                <medium><em>RTL → Gate Level → Floorplan → PnR → GDSII</em></medium>
+
+                <!-- ASIC Layout -->
+                <div style="width: 560px; height: 215px; overflow: hidden; border-radius: 10px; background: black;">
+                  <img src="./assets/images/aathil/stopwatch/k-layout_1.png" alt="ASIC Layout" style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+
+                <p class="modal-description" style="text-align: justify;">
+                  The Verilog design was synthesized using <strong>Yosys + ABC</strong>, floorplanned and placed with 
+                  <strong>OpenROAD</strong>, and routed with <strong>FastRoute</strong>.  
+                  Physical verification included DRC/LVS checks via <em>Magic</em> and timing analysis using <em>OpenSTA</em>.  
+                  The final GDSII was visualized in <strong>KLayout</strong>, confirming a valid chip layout ready for tape-out.
+                </p>
+
+                <div style="width: 560px; height: 215px; overflow: hidden; border-radius: 10px; background: black;">
+                  <img src="./assets/images/aathil/stopwatch/PNR.jpg" alt="ASIC Layout" style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+
+                <h3>Outcome</h3>
+                <p class="modal-description" style="text-align: justify;">
+                  This project highlights <strong>digital ASIC design</strong> using entirely open-source EDA tools.  
+                  It successfully demonstrated the full flow of designing, simulating, synthesizing, and implementing 
+                  a stopwatch system, providing both <em>functional verification</em> and <em>physical layout readiness</em>.
+                </p>
+              </div>
+            </div>    
+          
 
           <div id="plantMonitoringModal" class="modal">
             <div class="modal-content">
               <span class="close">&times;</span>
               <h2>Plant Monitoring System</h2>
                 <div style= "width: 560px; height: 300px; overflow: hidden; border-radius: 10px;">
-                  <img src="./assets/images/aathil/EMS-Breakout.jpg" alt="EMS" style="width: 100%; height: 100%; object-fit: cover;">
+                  <img src="./assets/images/aathil/plant monitor/nm.jpg" alt="EMS" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
-                  <p class="modal-description" style="text-align: justify;">
-                    mvm
-                  </p>
-                  <p class="modal-description" style="text-align: justify;">  
-                    The system features a robust circuit designed in <em>Altium Designer</em> and integrates seamlessly with <strong>ThingSpeak</strong> for secure cloud data storage and a SD module is also integrated to prevent data loss. A dedicated web interface displays real-time analytics and visualizations, enabling users to monitor energy usage remotely. Additionally, machine learning algorithms were employed to predict consumption patterns and provide actionable insights, supporting energy optimization and cost reduction efforts.
-                  </p>
+                   <p class="modal-description" style="text-align: justify;">
+                      Developed a <strong>low-cost IoT-based smart irrigation system</strong> using the <em>ESP32 microcontroller</em>, 
+                      soil moisture and DHT11 sensors, and a 12V water pump. 
+                      The system leverages <strong>FreeRTOS multitasking</strong> and integrates with <strong>ThingSpeak cloud</strong> 
+                      to monitor and automate water supply based on real-time soil conditions.
+                    </p>
+                  <h3>System Concept</h3>
+                    <medium><em>Soil Monitoring • Automated Irrigation • Cloud Integration</em></medium>
+
+                    <p class="modal-description" style="text-align: justify;">
+                      The project addresses inefficiencies in manual irrigation by introducing an 
+                      <strong>automated solution</strong>.  
+                      The system continuously measures <em>soil moisture, temperature, and humidity</em>, uploads 
+                      the data to the cloud, and controls a water pump accordingly.  
+                      This ensures optimized water usage, preventing both under- and over-irrigation.
+                    </p>
+
+                    <h3>Hardware Components</h3>
+                    <medium><em>Sensors • Microcontroller • Actuators</em></medium>
+
+                    <!-- Sensors -->
+                    <div style="width: 560px; height: 215px; overflow: hidden; border-radius: 10px; background: black;">
+                      <img src="./assets/images/aathil/plant monitor/dht.jpg" alt="DHT11 Sensor" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <p class="modal-description" style="text-align: justify;">
+                      <strong>DHT11 Sensor:</strong> Measures air temperature (0–50°C) and humidity (20–90%) with ±1% accuracy.
+                    </p>
+
+                    <div style="width: 560px; height: 215px; overflow: hidden; border-radius: 10px; background: black;">
+                      <img src="./assets/images/aathil/plant monitor/mois.png" alt="Soil Moisture Sensor" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <p class="modal-description" style="text-align: justify;">
+                      <strong>Resistive Soil Moisture Sensor:</strong> Detects soil water content by measuring resistance variation.
+                    </p>
+
+                    <!-- ESP32 MCU -->
+                    <div style="width: 560px; height: 215px; overflow: hidden; border-radius: 10px; background: black;">
+                      <img src="./assets/images/aathil/plant monitor/esp32.png" alt="ESP32 Microcontroller" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <p class="modal-description" style="text-align: justify;">
+                      <strong>ESP32 Microcontroller:</strong> A dual-core MCU with integrated Wi-Fi and Bluetooth, 
+                      programmed via Arduino IDE with FreeRTOS for multitasking.
+                    </p>
+
+                    <!-- Pump + Relay -->
+                    <div style="width: 560px; height: 215px; overflow: hidden; border-radius: 10px; background: black;">
+                      <img src="./assets/images/aathil/plant monitor/rel.png" alt="Relay Module" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <p class="modal-description" style="text-align: justify;">
+                      <strong>12V Water Pump + Relay:</strong> The relay switches the pump ON/OFF based on soil 
+                      moisture thresholds received from cloud data.
+                    </p>
+
+                    <h3>Cloud Integration</h3>
+                    <!-- Cloud Data -->
+                    <div style="width: 560px; height: 215px; overflow: hidden; border-radius: 10px; background: black;">
+                      <img src="./assets/images/aathil/plant monitor/cloud.png" alt="ThingSpeak Data" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <p class="modal-description" style="text-align: justify;">
+                      Sensor readings are uploaded to <strong>ThingSpeak</strong> for visualization.  
+                      Cloud data allows remote monitoring of <em>temperature, humidity, and soil moisture</em>.  
+                      Automated logic ensures the pump activates when soil dryness crosses a threshold.
+                    </p>
+
+                    <h3>Programming & FreeRTOS</h3>
+                    <p class="modal-description" style="text-align: justify;">
+                      Implemented <strong>task-based programming</strong> using FreeRTOS:
+                      <ul>
+                        <li>Task 1: Upload temperature and humidity to ThingSpeak</li>
+                        <li>Task 2: Upload soil moisture readings</li>
+                        <li>Task 3: Control water pump using relay, based on real-time soil conditions</li>
+                      </ul>
+                      This approach ensures reliable multitasking and smooth real-time operation of all modules.
+                    </p>
+
+                    <h3>Final Outcome</h3>
+                    <!-- Final Hardware Setup -->
+                    <div style="width: 560px; height: 215px; overflow: hidden; border-radius: 10px; background: black;">
+                      <img src="./assets/images/aathil/plant monitor/fin.jpg" alt="Final IoT Setup" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <p class="modal-description" style="text-align: justify;">
+                      The system automatically irrigates crops, displays real-time values on an LCD, 
+                      and provides live monitoring via cloud dashboard.  
+                      It is <strong>low-cost, power-efficient, and scalable</strong>, making it suitable for smart agriculture applications.
+                    </p>
           
 
             </div>

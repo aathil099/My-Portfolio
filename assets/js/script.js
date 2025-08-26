@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
     'Energy Monitoring System': document.getElementById('emsModal'),
     'EMS Breakout Board': document.getElementById('emsBreakoutBoardModal'),
     'Matrix Vector Multiplier UART System': document.getElementById('mvmUartModal'),
-    'Digital Safe': document.getElementById('digitalSafeModal'),
+    'Digital Stop Watch': document.getElementById('digitalSafeModal'),
     'Plant Monitoring System': document.getElementById('plantMonitoringModal'),
     'Custom ESP board': document.getElementById('customEspBoardModal'),
     'vehicle indicator circuit': document.getElementById('vehicleIndicatorModal'),
